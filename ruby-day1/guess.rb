@@ -12,7 +12,7 @@ until guess == numberToGuess
   guesses  += 1
   print 'Guess the number: '
   guess = gets.to_i
-  puts 'You guessed ' + guess.to_s + ' which was ' + 
+  puts "You guessed #{guess.to_s} which was " + 
     if guess > numberToGuess
       result = 'too high!'
     elsif guess < numberToGuess
@@ -22,6 +22,5 @@ until guess == numberToGuess
     end
 end
 
-puts 'You guessed it with ' + guesses.to_s + ' attempt' +
-  ('s' if guesses > 1).to_s + '.'
+puts "You guessed it with #{guesses} attempt#{'s' if guesses > 1}."
 puts 'Well done!' if guesses == 1
