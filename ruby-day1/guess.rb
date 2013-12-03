@@ -22,10 +22,5 @@ until guess == numberToGuess
     end
 end
 
-if guesses == 1
-  plural = ''
-else
-  plural = 's'
-end
-
-puts 'You guessed it with ' + guesses.to_s + ' attempt' + plural + '.'
+puts 'You guessed it with ' + guesses.to_s + ' attempt' +
+  ('s' if guesses > 1).to_s
