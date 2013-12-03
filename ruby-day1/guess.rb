@@ -20,4 +20,9 @@ until guess == numberToGuess
       result = "CORRECT!" 
     end
 end
-puts 'You guessed it with ' + guesses.to_s + ' attempt' + ('s' if guesses > 1)
+if guesses == 1
+  plural = ''
+else
+  plural = 's'
+end
+puts 'You guessed it with ' + guesses.to_s + ' attempt' + plural + '.'
