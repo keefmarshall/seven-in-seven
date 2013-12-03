@@ -7,6 +7,7 @@
 numberToGuess = rand(10)
 guess = -1
 guesses = 0
+
 until guess == numberToGuess
   guesses  += 1
   print 'Guess the number: '
@@ -20,9 +21,11 @@ until guess == numberToGuess
       result = "CORRECT!" 
     end
 end
+
 if guesses == 1
   plural = ''
 else
   plural = 's'
 end
+
 puts 'You guessed it with ' + guesses.to_s + ' attempt' + plural + '.'
