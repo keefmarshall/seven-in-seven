@@ -73,15 +73,23 @@ you'd have to keep calling this after each add to ensure uniqueness, not
 really ideal Set behaviour. Can't see a way to "add_only_if_unique". Actually
 it seems Ruby does have its own Set object these days - maybe the book is old.
 AH, I see - if you use the union operator "|=" you can add new content but it
-will de-duplicate. See: 
-    http://devblog.avdi.org/2012/08/27/array-set-operations-in-ruby/
-    
+will de-duplicate. 
+
+so:
+
+arr = [1, 2, 3]
+arr |= [3, 4]
+arr => [1, 2, 3, 4]
+
+or simply arr |= [3]
+
 
 LinkedLists: there's a delete_at method which removes the entry at the
 specified index and shuffles everything else up. Can't see a corresponding
-way to insert at a random point, though. Ah, not in old Ruby, but 2.0 at least 
-has an insert method to do this. I doubt these are very performant as they'll
-have to shift the whole array, somewhat reducing the point of a LinkedList..
+way to insert at a random point, though. Ah, not according to the Ruby book,
+but 2.0 at least has an insert method to do this. I doubt these are very
+performant as they'll have to shift the whole array, somewhat reducing the
+point of a LinkedList.
 
 Queues: there's "shift" and "unshift" which remove and add to the start of the
 array accordingly - combined with push and pop these give quite useful queue
