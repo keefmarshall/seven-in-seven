@@ -22,7 +22,7 @@ print 'Hello World'
 'Hello Ruby'.index('Ruby')
 
 # • Print your name ten times.
-(1..10).each {|x| puts 'Keith'}
+10.times {puts 'Keith'}
 
 # • Print the string “This is sentence number 1,” where the number 1 changes from 1 to 10.
 (1..10).each {|x| puts "This is sentence number " + x.to_s}
