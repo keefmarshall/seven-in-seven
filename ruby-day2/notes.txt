@@ -1,0 +1,85 @@
+Files
+=====
+
+Ruby's IO object forms the basis for streaming IO.
+
+File inherits from IO.
+
+You can create a new instance, which also opens the file for read, write or
+both depending upon the qualifiers.
+
+    myFile = File.new("myfile", "r")
+    .. do stuff
+    myFile.close
+
+BUT you can also use the open() method, which takes a block, and automatically
+closes the file for you:
+
+    File.open("myfile", "r") do |myFile|
+    .. do stuff
+    end
+
+File has a bunch of useful iterator methods like "each" which you can use
+to quickly process by line. You can choose to split on characters other than
+a newline, if you want.
+
+
+Hashes and Arrays
+==================
+
+Translating a hash to an array
+ - Hash has a to_a method which converts like this:
+
+{ :key1 => thing1, :key2 => thing2 }.to_a >>
+    [[:key1, thing1], [:key2, thing2]]
+
+Translating an array to a hash:
+ - my first instinct would be to turn the array index into the key. There's no
+ to_h method.
+ 
+ Something like this:
+ 
+arr = ['a', 'b', 'c']
+hsh = {}
+arr.each_index { |i| hsh[i] = arr[i] }
+ 
+.. produces:
+
+hsh = {0 => "a", 1 => "b", 2 => "c"} 
+
+ 
+Iterating through a hash
+------------------------
+
+Several ways to do this - lots of "each" methods.
+
+each
+each_key
+each_value
+
+[also each_pair is a synonym for each]
+
+
+Arrays used as other data structures
+------------------------------------
+
+Stacks are easy - use push and pop.
+
+The book says you can use them as linked lists - not quite clear how.
+The programming ruby book mentions sets, fifos, queues and dequeues.
+
+Sets: you can use uniq! to ensure the array contains only unique entries but
+you'd have to keep calling this after each add to ensure uniqueness, not 
+really ideal Set behaviour. Can't see a way to "add_only_if_unique"
+
+LinkedLists: there's a delete_at method which removes the entry at the
+specified index and shuffles everything else up. Can't see a corresponding
+way to insert at a random point, though. Ah, not in old Ruby, but 2.0 at least 
+has an insert method to do this. I doubt these are very performant as they'll
+have to shift the whole array, somewhat reducing the point of a LinkedList..
+
+Queues: there's "shift" and "unshift" which remove and add to the start of the
+array accordingly - combined with push and pop these give quite useful queue
+behaviours.
+
+
