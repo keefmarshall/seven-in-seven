@@ -23,4 +23,5 @@ until guess == numberToGuess
 end
 
 puts 'You guessed it with ' + guesses.to_s + ' attempt' +
-  ('s' if guesses > 1).to_s
+  ('s' if guesses > 1).to_s + '.'
+puts 'Well done!' if guesses == 1
