@@ -4,7 +4,7 @@
 
     Usage within the Io shell:
     
-        doFile("allSlotNames.io")
+        doFile("SlotFinder.io")
         SlotFinder allSlotNames(<thing>)
 */
 
