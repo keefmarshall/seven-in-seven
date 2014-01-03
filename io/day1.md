@@ -56,10 +56,8 @@ type "protos"_
 
 ### Assignment ###
 
-* A single equals '=' assigns a value to a slot only if the slot already exists,
-otherwise it throws an exception.
-* ::= and := both create the slot and assign to it. The double colon form also
-creates a 'setter' method
+* A single equals '=' assigns a value to a slot only if the slot already exists, otherwise it throws an exception.
+* ::= and := both create the slot and assign to it. The double colon form also creates a 'setter' method
 
 
     Io> Thing desc := "Description of thing"
