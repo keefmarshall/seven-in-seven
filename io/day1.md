@@ -60,8 +60,8 @@ type `protos` for some reason in the CLI_
 
 ### Assignment ###
 
-* A single equals '=' assigns a value to a slot only if the slot already exists, otherwise it throws an exception.
-* ::= and := both create the slot and assign to it. The double colon form also creates a 'setter' method
+* A single equals `=` assigns a value to a slot only if the slot already exists, otherwise it throws an exception.
+* `::=` and `:=` both create the slot and assign to it. The double colon form also creates a 'setter' method
 
 Example:
 
