@@ -59,6 +59,7 @@ type "protos"_
 * A single equals '=' assigns a value to a slot only if the slot already exists, otherwise it throws an exception.
 * ::= and := both create the slot and assign to it. The double colon form also creates a 'setter' method
 
+Example:
 
     Io> Thing desc := "Description of thing"
     ==> Description of thing
