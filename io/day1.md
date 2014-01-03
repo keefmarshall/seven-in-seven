@@ -91,7 +91,13 @@ As to when you would use the ::= form - I'm not sure at this point. Perhaps
 you can pass method references like you can in JavaScript, in which case it
 might be useful at that point as you can then pass the setter...
 
+### Inline Code Evaluation ###
 
+`doString("some code")` is like `eval` in JavaScript. You can call it in the 
+context of any object as well, e.g.:
+
+    Thing doString("thingMethod")
+    
 
 
 

@@ -10,10 +10,10 @@
 
 SlotFinder := Object clone
 SlotFinder allSlotNames := method(thing, (
-    //thing type println
     allNames := list()
     allNames appendSeq (thing slotNames)
 
+    // Calling "Object protos" causes Io to loop infinitely..
     if(thing type != "Object" and thing type != nil, (
             thing protos foreach(subthing, (
                     SlotFinder allSlotNames(subthing) foreach(slotName, (
