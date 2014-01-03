@@ -3,7 +3,7 @@ Io
 [Week 2, Seven Languages in Seven Days] 
 
 Day One
-=======
+-------
 
 * Io language website: http://iolanguage.org/
 * Io community: http://groups.yahoo.com/neo/groups/iolanguage/info
@@ -14,8 +14,7 @@ on the number prototype which takes an argument of number. It is *dynamically*
 typed though, because you don't explicitly specify the type in
 method or variable definitions.
 
-Booleans
---------
+### Booleans ###
 
 0 is true if tested directly: 
 
@@ -39,8 +38,7 @@ The empty string is true, but 'nil' is false:
     false
     ==> false
 
-Slots
------
+### Slots ###
 
 Slots are like hash keys or properties in JavaScript (except hashes are more
 specific in Io, they can only hold values, not objects, I think..)
