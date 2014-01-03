@@ -9,6 +9,7 @@ Day One
 * Io community: http://groups.yahoo.com/neo/groups/iolanguage/info
 * Io example code: https://github.com/stevedekorte/io/tree/master/samples
 * Useful shortcut to syntax reference: http://iolanguage.org/scm/io/docs/IoGuide.html#Syntax
+* Style guide (such that it is): http://en.wikibooks.org/wiki/Io_Programming/Io_Style_Guide - pretty basic
 
 Io is strongly typed: 1 + "one" throws an exception because "+" is a method
 on the number prototype which takes an argument of number. It is *dynamically*
@@ -51,6 +52,8 @@ for the "Object" prototype):
 
 .. this doesn't show inherited slots from parents, though. To do that, you 
 have to use recursion through the prototype list in <Thing> protos.
+
+[see code example: allSlotNames.io]
 
 _NOTE: "Object protos" causes the cmd line to hang!! but you can just
 type "protos"_
