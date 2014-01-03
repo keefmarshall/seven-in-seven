@@ -8,6 +8,7 @@ Day One
 * Io language website: http://iolanguage.org/
 * Io community: http://groups.yahoo.com/neo/groups/iolanguage/info
 * Io example code: https://github.com/stevedekorte/io/tree/master/samples
+* Useful shortcut to syntax reference: http://iolanguage.org/scm/io/docs/IoGuide.html#Syntax
 
 Io is strongly typed: 1 + "one" throws an exception because "+" is a method
 on the number prototype which takes an argument of number. It is *dynamically*
