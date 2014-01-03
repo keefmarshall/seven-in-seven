@@ -10,7 +10,7 @@
 
 SlotFinder := Object clone
 SlotFinder allSlotNames := method(thing, (
-    thing type println
+    //thing type println
     allNames := list()
     allNames appendSeq (thing slotNames)
 
