@@ -7,8 +7,11 @@ Vehicle := Object clone
 Vehicle desc := "It can carry you around"
 
 Car := Vehicle clone
+Car drive := method("Vroom" println)
 
 ferrari := Car clone
 
+// NB expect to see all the Object slotNames in the output, along with
+// "desc" and "drive"
 SlotFinder allSlotNames(ferrari) println
 
