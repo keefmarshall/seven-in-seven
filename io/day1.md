@@ -61,6 +61,7 @@ otherwise it throws an exception.
 * ::= and := both create the slot and assign to it. The double colon form also
 creates a 'setter' method
 
+
     Io> Thing desc := "Description of thing"
     ==> Description of thing
     Io> Thing desc = "new description of thing"
