@@ -15,8 +15,13 @@ SlotFinder allSlotNames := method(thing, (
     allNames appendSeq (thing slotNames)
 
     if(thing type != "Object" and thing type != nil, (
-            thing protos foreach(subthing, 
-                allNames appendSeq(SlotFinder allSlotNames(subthing))
+            thing protos foreach(subthing, (
+                    SlotFinder allSlotNames(subthing) foreach(slotName, (
+                            // only add if not already in the list
+                            if(allNames contains(slotName), nil, allNames append(slotName))
+                        )
+                    )   
+                )
             )
         )
     )
