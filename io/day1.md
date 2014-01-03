@@ -51,12 +51,12 @@ for the "Object" prototype):
     Object slotNames
 
 .. this doesn't show inherited slots from parents, though. To do that, you 
-have to use recursion through the prototype list in <Thing> protos.
+have to use recursion through the prototype list in `<Thing> protos`.
 
 [see code example: allSlotNames.io]
 
-_NOTE: "Object protos" causes the cmd line to hang!! but you can just
-type "protos"_
+_NOTE: `Object protos` causes the cmd line to hang!! but you can just
+type `protos` for some reason in the CLI_
 
 ### Assignment ###
 
