@@ -14,14 +14,13 @@ SlotFinder allSlotNames := method(thing, (
     allNames appendSeq (thing slotNames)
 
     // Calling "Object protos" causes Io to loop infinitely..
-    if(thing type != "Object" and thing type != nil, (
-            thing protos foreach(subthing, (
-                    SlotFinder allSlotNames(subthing) foreach(slotName, (
-                            // only add if not already in the list
-                            if(allNames contains(slotName), nil, allNames append(slotName))
-                        )
-                    )   
-                )
+    if(thing type != "Object" and thing type != nil) then (
+        thing protos foreach(subthing, (
+                SlotFinder allSlotNames(subthing) foreach(slotName, (
+                        // only add if not already in the list
+                        if(allNames contains(slotName), nil, allNames append(slotName))
+                    )
+                )   
             )
         )
     )

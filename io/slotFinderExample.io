@@ -13,5 +13,11 @@ ferrari := Car clone
 
 // NB expect to see all the Object slotNames in the output, along with
 // "desc" and "drive"
-SlotFinder allSlotNames(ferrari) println
+slotNames := SlotFinder allSlotNames(ferrari)
 
+expected := 137
+if (slotNames size != expected) then (
+    ("Unexpected size! Expected " .. (expected asString) .. ", got " .. (slotNames size asString)) println
+) else (
+    slotNames println
+)
