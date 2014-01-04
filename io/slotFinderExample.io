@@ -17,7 +17,8 @@ slotNames := SlotFinder allSlotNames(ferrari)
 
 expected := 137
 if (slotNames size != expected) then (
-    ("Unexpected size! Expected " .. (expected asString) .. ", got " .. (slotNames size asString)) println
+    ("Unexpected size! Expected " .. (expected asString) .. 
+        ", got " .. (slotNames size asString)) println
 ) else (
     slotNames println
 )
