@@ -49,3 +49,24 @@ Matrix transpose := method(
     _matrix foreach(x, row, row foreach(y, val, trans set(y, x, val)))
     return trans
 )
+
+// OK, this is cheating a little, it just serialises the matrix lists
+// - I could invent my own matrix storage file format and use that, I guess
+
+Matrix writeToFile := method(filename, (
+        file := File clone open(filename)
+        file write((_matrix asString), "\n")
+        file close
+    )
+)
+
+Matrix readFromFile := method(filename, (
+        file := File clone openForReading(filename)
+        matrixAsString := file readToEnd(4096)
+        file close
+        
+        newMatrix := Matrix clone
+        newMatrix _matrix := doString(matrixAsString)
+        return newMatrix
+    )
+)
