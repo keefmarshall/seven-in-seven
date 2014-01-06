@@ -14,3 +14,7 @@ if (trans get(2,0) != 3) then(Exception raise("Test 3 failed!")) else(trans prin
 trans writeToFile("transpose.matrix")
 trans2 := Matrix readFromFile("transpose.matrix")
 if (trans2 get(2,0) != 3) then(Exception raise("Test 4 failed!")) else(trans2 println)
+
+// clean up by removing the file
+file := File clone setPath("transpose.matrix")
+file remove
