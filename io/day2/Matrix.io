@@ -24,15 +24,25 @@ Matrix dim := method(width, height, (
     )
 )
 
+Matrix checkDimmed := method(
+    if(call target hasSlot("_matrix")) then(
+        return true
+    ) else (
+        Exception raise("Dimensions not yet set!")
+    )
+)
+
 Matrix set := method(x, y, value, (
+        checkDimmed
         _matrix at(x) atPut(y, value)
         return call target
     )
 )
 
-Matrix get := method(x, y, _matrix at(x) at(y))
+Matrix get := method(x, y, checkDimmed; _matrix at(x) at(y))
 
 Matrix transpose := method(
+    checkDimmed
     trans := Matrix clone
     trans dim(_matrix at(0) size, _matrix size)
     
