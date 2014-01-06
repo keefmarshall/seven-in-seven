@@ -10,25 +10,37 @@ tries := 0
 lastGuess := nil
 found := false
 
+writeln("I've chosen a number between 1 and 100.")
+
 while (tries < maxTries and found == false, (
+        tries = tries + 1
+
         write("Guess the number: ")
         answer := File standardInput readLine asNumber
+
         if (answer == secret) then(
             found = true
         ) else (
             writeln("Bad luck, that was incorrect.")
+
+            if (answer < 1 or answer > 100) then(
+                writeln("Bzzt! My number is between 1 and 100!")
+            )
            
             if (lastGuess != nil) then(
-                if ((lastGuess - secret) abs > (answer - secret) abs) then(
-                    writeln("Getting warmer!")
+                if (lastGuess == answer) then(
+                    writeln("Err, trying a different number normally helps!")
                 ) else (
-                    writeln("Getting cooler!")
+                    if ((lastGuess - secret) abs > (answer - secret) abs) then(
+                        writeln("Getting warmer!")
+                    ) else (
+                        writeln("Getting cooler!")
+                    )
                 )
             )
             
             lastGuess = answer
-            tries = tries + 1
-        )     
+        )
     )
 )
 
