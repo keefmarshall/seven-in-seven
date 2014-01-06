@@ -54,12 +54,15 @@ Matrix transpose := method(
 // - I could invent my own matrix storage file format and use that, I guess
 
 Matrix writeToFile := method(filename, (
+        checkDimmed
         file := File clone open(filename)
         file write((_matrix asString), "\n")
         file close
     )
 )
 
+// NB this creates and returns a new Matrix instance, it doesn't load
+// into the current instance
 Matrix readFromFile := method(filename, (
         file := File clone openForReading(filename)
         matrixAsString := file readToEnd(4096)
