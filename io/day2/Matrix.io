@@ -55,7 +55,7 @@ Matrix transpose := method(
 
 Matrix writeToFile := method(filename, (
         checkDimmed
-        file := File clone open(filename)
+        file := File with(filename) open
         file write((_matrix asString), "\n")
         file close
     )
@@ -64,8 +64,8 @@ Matrix writeToFile := method(filename, (
 // NB this creates and returns a new Matrix instance, it doesn't load
 // into the current instance
 Matrix readFromFile := method(filename, (
-        file := File clone openForReading(filename)
-        matrixAsString := file readToEnd(4096)
+        file := File with(filename) openForReading
+        matrixAsString := file contents
         file close
         
         newMatrix := Matrix clone
