@@ -114,5 +114,6 @@ Builder ul({"class":"thing"},
     li(b("Io")), 
     li("Lua"), 
     li("JavaScript"),
-    li(a({"href":"http://example.com/"}, "Sample link"))
+    li(a({"href":"http://example.com/", "class":"mylink"}, "Sample link"))
 ) println
+
