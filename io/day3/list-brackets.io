@@ -22,6 +22,9 @@
 
 squareBrackets := method(
     newList := List clone
+    
+    // actually evalArgs is itself the list I need but I copy it here just
+    // to be safe
     call evalArgs foreach(arg, newList append(arg))
     return newList
 )
