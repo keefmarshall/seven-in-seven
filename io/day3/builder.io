@@ -9,25 +9,21 @@ Builder := Object clone
 Builder indent := 0
 
 Builder forward := method(
-    writeIndent
-    writeln("<", call message name, ">")
+    writeln(indentStr, "<", call message name, ">")
     increaseIndent
     call message arguments foreach(arg, (
             content := self doMessage(arg)
-            if(content type == "Sequence", (
-                    writeIndent
-                    writeln(content)
-                )
-            )
+            if(content type == "Sequence", writeln(indentStr, content))
         )
     )
     decreaseIndent
-    writeIndent
-    writeln("</", call message name, ">")
+    writeln(indentStr, "</", call message name, ">")
 )
-  
-Builder writeIndent := method(
-    indent repeat(write("    "))
+
+Builder indentStr := method(
+    ind := ""
+    indent repeat(ind = ind .. "    ")
+    return ind
 )
 
 Builder increaseIndent := method(indent = indent + 1)
