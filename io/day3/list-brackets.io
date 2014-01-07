@@ -32,16 +32,13 @@ squareBrackets := method(
 // test it:
 mylist := [ "one", 2, "xx", 4, 5 ]
 
-passfail := method(name, test, (
-        write(name, ": ")
-        if (test) then(writeln("Passed")) else(writeln("Failed"))
-    )
-)
-
 // tests:
-passfail("Test1", mylist proto == List)
-passfail("Test2", mylist size == 5)
-passfail("Test3", mylist at(1) == 2)
-passfail("Test3a", mylist at(1) type == "Number")
-passfail("Test4", mylist at(2) == "xx")
-passfail("Test4a", mylist at(2) type == "Sequence")
+tester := Tester clone reset
+tester passfail("Test 1", mylist proto == List)
+tester passfail("Test 2", mylist size == 5)
+tester passfail("Test 3.1", mylist at(1) == 2)
+tester passfail("Test 3.2", mylist at(1) type == "Number")
+tester passfail("Test 4.1", mylist at(2) == "xx")
+tester passfail("Test 4.2", mylist at(2) type == "Sequence")
+
+tester printStatus
