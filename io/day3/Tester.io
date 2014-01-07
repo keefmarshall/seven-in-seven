@@ -6,7 +6,7 @@ Tester := Object clone
 
 Tester failures := list()
 
-Tester passfail := method(name, test, (
+Tester test := method(name, test, (
         write(name, ": ")
         if (test) then(writeln("Passed")) else(
             writeln("Failed")

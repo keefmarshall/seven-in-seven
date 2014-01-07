@@ -34,11 +34,11 @@ mylist := [ "one", 2, "xx", 4, 5 ]
 
 // tests:
 tester := Tester clone reset
-tester passfail("Test 1", mylist proto == List)
-tester passfail("Test 2", mylist size == 5)
-tester passfail("Test 3.1", mylist at(1) == 2)
-tester passfail("Test 3.2", mylist at(1) type == "Number")
-tester passfail("Test 4.1", mylist at(2) == "xx")
-tester passfail("Test 4.2", mylist at(2) type == "Sequence")
+tester test("Test 1", mylist proto == List)
+tester test("Test 2", mylist size == 5)
+tester test("Test 3.1", mylist at(1) == 2)
+tester test("Test 3.2", mylist at(1) type == "Number")
+tester test("Test 4.1", mylist at(2) == "xx")
+tester test("Test 4.2", mylist at(2) type == "Sequence")
 
 tester printStatus
