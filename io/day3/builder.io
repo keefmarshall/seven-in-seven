@@ -112,7 +112,7 @@ Builder curlyBrackets := method(
 
 Builder ul({"class":"thing"},
     li(b("Io")), 
-    li("Lua"), 
+    li({"class":"lua"}, "Lua"), 
     li("JavaScript"),
     li(a({"href":"http://example.com/", "class":"mylink"}, "Sample link"))
 ) println
