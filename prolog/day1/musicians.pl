@@ -20,3 +20,12 @@
 % The artist_tags.pl file is available under Creative Commons by-nc-sa as per
 % the source data.
 
+% These are just some silly rules for me to play with:
+
+progjazz(X) :- genre(X, 'Progressive rock'), genre(X, 'jazz').
+jazzpop(X) :- genre(X, 'jazz'), genre(X, 'pop').
+popmetal(X) :- genre(X, 'pop'), genre(X, 'metal').
+
+
+% I have to admit, the crowd-sourced tags from last.fm are pretty useless!
+% don't expect any seriously useful results from any of these!
