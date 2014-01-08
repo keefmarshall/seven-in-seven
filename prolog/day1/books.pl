@@ -12,9 +12,9 @@ wrote('Iain M. Banks', 'Use of Weapons').
 wrote('Iain M. Banks', 'Player of Games').
 wrote('J.R.R. Tolkien', 'The Hobbit').
 wrote('J.R.R. Tolkien', 'The Lord of the Rings').
-wrote('Stieg Larson', 'The Girl With The Dragon Tattoo').
-wrote('Stieg Larson', 'The Girl Who Played With Fire').
-wrote('Stieg Larson', 'The Girl Who Kicked The Hornet\'s Nest').
+wrote('Stieg Larsson', 'The Girl With The Dragon Tattoo').
+wrote('Stieg Larsson', 'The Girl Who Played With Fire').
+wrote('Stieg Larsson', 'The Girl Who Kicked The Hornet\'s Nest').
 
 % Sample queries - run these within the interactive prolog shell:
 %
