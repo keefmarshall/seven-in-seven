@@ -15,3 +15,8 @@ sorted(List, Tracker, Sorted) :-
 	sorted(NewList, NewTracker, Sorted).
 
 sorted(List, Sorted) :- sorted(List, [], Sorted).
+
+% This works fine, but is pretty poorly optimised - it essentially runs through
+% the whole list to pick out the smallest. It extracts that from the list, then
+% runs through the remaining list to find the smallest, etc.. dreadfully
+% inefficient.
