@@ -1,7 +1,7 @@
 Prolog Day One
 ==============
 
-[Seven languages in seven days]
+[Seven languages in seven weeks]
 
 References:
 -----------
