@@ -24,6 +24,12 @@ useful to see what's going on, especially if there's an error.
 
 `_` can be used as a variable that has any value - we don't care, essentially.
 
+### Maths operator reference ###
+
+Why on earth isn't this easier to find.. it's basic stuff!
+
+* http://www.gprolog.org/manual/gprolog.html#sec96
+
 
 Exercises
 ---------
