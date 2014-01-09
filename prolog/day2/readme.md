@@ -20,6 +20,11 @@ if there's no further thing to try, or try something else.
 Use `trace.` to turn on debug traces and `notrace.` to turn them off. Very
 useful to see what's going on, especially if there's an error.
 
+### misc notes ###
+
+`_` can be used as a variable that has any value - we don't care, essentially.
+
+
 Exercises
 ---------
 
@@ -50,4 +55,24 @@ This would have been a nice problem to solve myself, actually - will have a go
 before analysing these ones too deeply. Mine is fibk.pl - turns out
 almost identical to the first solution here. Cool. Let's try tail recursion:
 fibk2.pl
+
+Aha, lightbulb moment - the tail recursion ones work by calculating from the
+bottom up, but decrementing the depth. So, you pass in the initial parameters
+(essentially!) and work up from there.
+
+Still needed to crib from the example in the above link. Got there in the
+end though.
+
+### Real world community using Prolog ###
+
+Some good answers here:
+
+    http://stackoverflow.com/questions/130097/real-world-prolog-usage
+
+Essentially it's used in AI (e.g. natural language processing), but also in 
+constructing parsers, and in a few rare cases for people to construct business
+rules.
+
+There's one example of its use in clinical decision support which would have
+been interesting at my previous employer!
 
