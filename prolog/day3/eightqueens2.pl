@@ -29,15 +29,9 @@ columns(Cols, Length) :-
 
 % OK, let's try again without the fd_domain thing:
 
-
-valid_values([]).
-valid_values([Head|Tail]) :-
-	member(Head, [1,2,3,4,5,6,7,8]),
-	valid_values(Tail).
-
 valid_columns(Cols) :- 
 	length(Cols, 8),
-	valid_values(Cols),
+	permutation(Cols, [1,2,3,4,5,6,7,8]),
 	fd_all_different(Cols).
 
 % Right, lets try again with the queens:
@@ -102,3 +96,6 @@ eight_queens5(Board) :-
 
 % NOTE: My eight_queens4() method finds all solutions in 3.3 seconds.
 % The optimized one from the book takes 52 seconds. I win :)
+%
+% FURTHER NOTE: switched to using "permutation" - now takes <150ms !!!
+

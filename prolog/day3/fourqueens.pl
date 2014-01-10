@@ -3,14 +3,9 @@
 % - actually two valid solutions: 
 %    [(1,2),(2,4),(3,1),(4,3)] and [(1,3),(2,1),(3,4),(4,2)]
 
-valid_values([]).
-valid_values([Head|Tail]) :-
-	member(Head, [1,2,3,4]),
-	valid_values(Tail).
-
 valid_columns(Cols) :- 
 	length(Cols, 4),
-	valid_values(Cols),
+	permutation(Cols, [1,2,3,4]),
 	fd_all_different(Cols).
 
 % Great! Now we have to deal with diagonals, which is trickier.
