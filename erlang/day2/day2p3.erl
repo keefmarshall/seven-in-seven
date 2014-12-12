@@ -30,13 +30,39 @@ rowFinder(PartialBoard, Acc) ->
 			end
 	end.
 
+rowFinder2(Board) ->
+	Seq = lists:seq(0, ?BOARDSIZE - 1),
+	[ [lists:nth(I + N, Board) || I <- Seq  ] || N <- lists:seq(1, ?BOARDSIZE * ?BOARDSIZE, ?BOARDSIZE) ].
+	
+colFinder(Board) ->
+	Seq = lists:seq(1, ?BOARDSIZE),
+	[ [lists:nth(I, Board) || I <- lists:seq(N, ?BOARDSIZE * ?BOARDSIZE, ?BOARDSIZE) ] || N <- Seq ].
+	
 % rowFinder currently returns everything reversed. so, reversing the input
 % Board gives us everything back in the right order.
 rows(Board) -> rowFinder(lists:reverse(Board), []).
-			
+
+% This converts the board to be in column order, then uses the rows() function to
+% extract columns. Its quite insane.
+cols(Board) -> 
+	Rows = rows(Board),
+	rows([ lists:nth(N, Row) || N <- lists:seq(1, ?BOARDSIZE), Row <- Rows ]).
+
+diag1(Board) ->
+	[ lists:nth(N, Board) || N <- lists:seq(1, ?BOARDSIZE * ?BOARDSIZE, ?BOARDSIZE + 1)].
+
+diag2(Board) ->
+	[ lists:nth(N, Board) || N <- lists:seq(?BOARDSIZE, (?BOARDSIZE * ?BOARDSIZE) - 1, ?BOARDSIZE - 1)].
+
 run() -> 
 	io:write(testBoard()),
 	io:fwrite("\n"),
-	io:write(rows(testBoard())),
+	io:write(rowFinder2(testBoard())),
+	io:fwrite("\n"),
+	io:write(colFinder(testBoard())),
+	io:fwrite("\n"),
+	io:write(diag1(testBoard())),
+	io:fwrite("\n"),
+	io:write(diag2(testBoard())),
 	io:fwrite("\n").
 	
